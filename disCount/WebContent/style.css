@@ -1,0 +1,30 @@
+#join{
+	width:2500px;
+	height:250px;
+	margin:auto;
+	text-align:left;
+	font-size:xx-small;
+}
+
+
+#login{
+	width:500px;
+	height:100px;
+	text-align:left;
+	font-size:xx-small;
+}
+
+
+#board{
+	width:250000px;
+	height:0px;
+	margin:auto;
+	text-align:center;
+	font-size:xx-small;
+}
+
+a:LINK {text-decoration: none;}
+a:VISITED {text-decoration: none;}
+a:ACTIVE {text-decoration: none;}
+a:HOVER {text-decoration: none;}
+a:HOVER {background-color: none;}
