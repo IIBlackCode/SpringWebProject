@@ -1,0 +1,69 @@
+CREATE DATABASE  IF NOT EXISTS `SB_Master` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `SB_Master`;
+-- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
+--
+-- Host: sb-mall.cu5prbfi9jue.ap-northeast-2.rds.amazonaws.com    Database: SB_Master
+-- ------------------------------------------------------
+-- Server version	5.7.26-log
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+SET @MYSQLDUMP_TEMP_LOG_BIN = @@SESSION.SQL_LOG_BIN;
+SET @@SESSION.SQL_LOG_BIN= 0;
+
+--
+-- GTID state at the beginning of the backup 
+--
+
+SET @@GLOBAL.GTID_PURGED='';
+
+--
+-- Table structure for table `CrowdGoodsOption`
+--
+
+DROP TABLE IF EXISTS `CrowdGoodsOption`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `CrowdGoodsOption` (
+  `optionSeq` int(11) NOT NULL AUTO_INCREMENT,
+  `goodsNo` varchar(20) DEFAULT NULL,
+  `opt1Name` varchar(60) DEFAULT NULL,
+  `crOpt1Price` int(11) DEFAULT NULL,
+  `opt2Name` varchar(60) DEFAULT NULL,
+  `crOpt2Price` int(11) DEFAULT NULL,
+  `crOptAmount` int(11) DEFAULT '0',
+  PRIMARY KEY (`optionSeq`),
+  KEY `goodsNo3_idx` (`goodsNo`),
+  CONSTRAINT `goodsNo3` FOREIGN KEY (`goodsNo`) REFERENCES `CrowdGoods` (`goodsNo`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=109 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `CrowdGoodsOption`
+--
+
+LOCK TABLES `CrowdGoodsOption` WRITE;
+/*!40000 ALTER TABLE `CrowdGoodsOption` DISABLE KEYS */;
+INSERT INTO `CrowdGoodsOption` VALUES (45,'1544578942292','기본형',0,'없음',0,100),(46,'1544579217809','기본형',0,'없음',0,99),(47,'1544578942292','기본형',0,'배터리 20000',50000,100),(48,'1544578942292','고급형',100000,'없음',0,99),(49,'1544578942292','고급형',100000,'카본 바디',200000,99),(50,'1544578942292','고급형',100000,'메탈 바디',400000,100),(51,'1544579217809','기본형',0,'배터리 20000',50000,100),(52,'1544579217809','고급형',150000,'없음',0,100),(53,'1544579217809','고급형',150000,'카본 바디',300000,99),(54,'1544579217809','고급형',150000,'메탈 바디',400000,100),(60,'1544594596723','기본형',0,'레드',20000,97),(61,'1544594596723','기본형',0,'블랙',40000,100),(62,'1544594848664','미래형',0,'아크원자로 모터',1000000,2),(63,'1544594976781','아르가르드 우르 모델',10000000,'+18강화',20000000,-2),(64,'1544595201107','기본모터',0,'화이트',0,40),(65,'1544595201107','슈퍼모터',10000000,'화이트',0,42),(66,'1544596749625','기본형',0,'합금티타늄 바디',40000000,2),(67,'1544596918439','기본형',0,'비브라늄 바디',10000000,3),(68,'1544597146828','실버서퍼 기본형',0,'아브라카다브라',30000000,5),(69,'1544597331922','한정판매',0,'없음',0,24),(70,'1544598534775','기본형',0,'티타늄 방탄 바디',2700000,15),(79,'1545614819840','기본형',0,'없음',0,100),(80,'1545614901735','기본형',0,'없음',0,100),(81,'1545614901735','기본형',0,'카본 바디',500000,100),(82,'1545614989124','기본형',0,'메탈 바디',1000000,100),(83,'1545614989124','기본형',0,'없음',0,100),(84,'1545614989124','고급형',1000000,'비브라늄 바디',2000000,50),(85,'1545615067941','기본형',0,'없음',0,100),(86,'1545615067941','고급형',0,'없음',0,100),(87,'1545615168200','기본형',0,'없음',0,100),(88,'1545615168200','고급형',0,'없음',0,100),(89,'1545615270965','기본형',0,'없음',0,100),(90,'1545615334003','기본형',0,'없음',0,100),(91,'1545615424449','기본형',0,'없음',0,100),(92,'1545616823557','기본형',0,'없음',0,100),(94,'1545622778260','기본형',0,'없음',0,99),(95,'1545620712883','기본형',0,'없음',0,100),(96,'1545620712883','기본형',0,'카본 바디',500000,100),(97,'1545620712883','고급형',490000,'없음',0,92),(98,'1545620712883','고급형',490000,'메탈 바디',790000,96),(99,'1545620712883','고급형',490000,'비브라늄 바디',1210000,100),(100,'1545624988298','기본형',0,'없음',0,100),(101,'1545624988298','기본형',0,'카본 바디',500000,99),(102,'1545624988298','고급형',1200000,'풀옵션',3000000,95),(108,'1545805706977','기본형',0,'없음',0,100);
+/*!40000 ALTER TABLE `CrowdGoodsOption` ENABLE KEYS */;
+UNLOCK TABLES;
+SET @@SESSION.SQL_LOG_BIN = @MYSQLDUMP_TEMP_LOG_BIN;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2019-12-20 11:50:05
